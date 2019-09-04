@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    		<a class="navbar-brand" href="{{ path('accueil') }}">ImmoDeal</a>
+    		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+    		</button>
+
+    		<div class="collapse navbar-collapse w-100" id="navbarColor01">
+    			<ul class="navbar-nav mr-auto">
+    				<li class="nav-item">
+    					<a class="nav-link" href="{{ path('acheter') }}">Acheter</a>
+    				</li>
+    				<li class="nav-item">
+    					<a class="nav-link" href="{{ path('louer') }}">Louer</a>
+    				</li>
+    				<li class="nav-item">
+    					<a class="nav-link" href="{{ path('emprunter') }}">Emprunter</a>
+    				</li>
+    				<li class="nav-item">
+    					<a class="nav-link" href="{{ path('construire') }}">Construire</a>
+    				</li>
+    				<li class="nav-item">
+    					<a class="nav-link" href="{{ path('contact') }}">Contact</a>
+    				</li>
+    			</ul>
+    		</div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarColor01">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('connexion') }}">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('inscription') }}">Inscription</a>
+                    </li>
+                </ul>
+            </div>
+    	</nav>
+        {% block body %}{% endblock %}
+
+        	<footer class="page-footer font-small teal pt-4 bg-primary text-white">
+        		<div class="container-fluid text-center text-md-left">
+        			<div class="row">
+        				<div class="col-md-6 mt-md-0 mt-3">
+        					<h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
+        					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
+        						repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
+        						harum esse fugiat. Itaque, culpa?</p>
+        				</div>
+        				<hr class="clearfix w-100 d-md-none pb-3">
+        				<div class="col-md-6 mb-md-0 mb-3">
+        					<h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
+        					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
+        							commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
+        							excepturi hic.</p>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="footer-copyright text-center py-3">© 2019 Copyright:
+        			<a href="https://mdbootstrap.com/education/bootstrap/"> ImmoDeal</a>
+        		</div>
+        	</footer>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

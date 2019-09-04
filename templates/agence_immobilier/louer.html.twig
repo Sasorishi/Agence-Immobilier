@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="jumbotron">
+	<h1 class="display-3">Hello, world!</h1>
+	<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+	<hr class="my-4">
+	<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+	<p class="lead">
+		<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+	</p>
+</div>
+
+{% set numOfCols = 5 %}
+{% set rowCount = 0 %}
+
+	<div class="card-deck m-5 d-block">
+		<div class="row m-5">
+			{% for bien in biens %}
+					<div class="card">
+						<a href="#">
+							<img class="card-img-top" src="http://www.placehold.it\120" alt="Card image cap">
+							<div class="card-body">
+								<h5 class="card-title">{{ bien.Idbien }}</h5>
+								<p class="card-text">{{ bien.prix }} €</p>
+								<p class="card-text">{{ bien.description }}</p>
+							</div>
+						</a>
+					</div>
+				{% set rowCount = rowCount + 1 %}
+				{% if rowCount % numOfCols == 0 %}
+					</div>
+					<div class="row m-5">
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+
+<p>Culpa occaecat excepteur Lorem duis dolor laboris commodo eiusmod cillum duis adipisicing excepteur. 
+Excepteur in non aliqua officia cillum voluptate voluptate esse. Voluptate Lorem ipsum exercitation do ex voluptate ut consequat. 
+Lorem cupidatat pariatur voluptate dolore.Duis labore anim veniam quis duis irure ad reprehenderit Lorem veniam qui officia anim.</p>
+
+<p>Id quis elit voluptate Lorem velit elit laborum dolor velit. Elit enim quis tempor fugiat reprehenderit aliqua Lorem exercitation quis. 
+Commodo esse reprehenderit excepteur duis velit eu eiusmod.Amet in magna ut irure enim sint velit fugiat aute pariatur aute mollit. 
+Sint anim ex occaecat proident mollit esse nulla enim aute. Ullamco duis sit id aliquip est magna enim consequat officia et in aute anim. 
+Ut ex ut ipsum labore mollit enim exercitation do velit exercitation id occaecat magna. 
+Non sunt aliquip id velit proident occaecat incididunt nulla aliqua officia esse ea ea laborum.Incididunt adipisicing ipsum nostrud mollit ut officia tempor. 
+Non ad non anim excepteur ullamco nostrud et in ut eiusmod ad sit elit et. Consequat mollit amet ut laborum eu duis velit velit minim magna esse.Minim et ex sunt aute. 
+Est sunt deserunt esse in. Sit aute consequat consectetur aliquip nisi id irure minim non. 
+Fugiat consequat ad quis culpa consequat exercitation cupidatat ex ad aliquip commodo consectetur. Lorem Lorem fugiat ullamco ex fugiat. 
+Eu id consectetur id ipsum non et ipsum aliquip officia fugiat dolor aute consectetur reprehenderit. Elit ad laborum dolore elit aute incididunt fugiat eiusmod.</p>
+
+{% endblock %}
